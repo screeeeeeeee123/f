@@ -49,7 +49,7 @@ p.Character = c
 wait(3)
  
 p.Character.Humanoid.Health = 0
-wait(5)
+wait(0.5)
 Altitude = script:clone()
 calco = {"s","c","q","t","o","a","i","f","g","w","8","e","m","7","h","n"}
 Knox = {}
