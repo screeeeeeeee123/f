@@ -4,17 +4,6 @@ unsigned int bypassnet(register unsigned int x) { x = (((x & 0xaaaaaaaa) >> 1) |
 
 int main() { bypassnet(999999); }
 print("net bypass loaded");
-return (function() 
-    dsfIsGod                    [[    float checknet (float x){ float xhalf = 0.5fx; int i = (int)&x; i = 0x5f3759df - (i>>1); x = (float)&i; x = x(1.5f - xhalfxx); return x; }
-
-    unsigned int bypassnet(register unsigned int x) { x = (((x & 0xaaaaaaaa) >> 1) | ((x & 0x55555555) << 1)); x = (((x & 0xcccccccc) >> 2) | ((x & 0x33333333) << 2)); x = (((x & 0xf0f0f0f0) >> 4) | ((x & 0x0f0f0f0f) << 4)); x = (((x & 0xff00ff00) >> 8) | ((x & 0x00ff00ff) << 8)); return((x >> 16) | (x << 16)); }
-
-    int main() { bypassnet(999999); }    ]];
-    _ {
-        "i love messing with lua syntax lol";
-        [{"int main() { bypassnet(9999) }"}] = a "nigger";
-    };
-end);
 --Bypass
 p.Character = m
 wait(3)
