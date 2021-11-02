@@ -145,7 +145,13 @@ local function InvokeCore(...)
    local Args = {...}
    local ErrMsg;
    local Err;
- 
+-- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end 
    repeat
        Err, ErrMsg = pcall(function()
            StarterGui:SetCore(unpack(Args)) 
@@ -155,7 +161,13 @@ local function InvokeCore(...)
        RS.RenderStepped:Wait()
    until not string.match(ErrMsg, "has not been registered")
 end
- 
+ -- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
  local plr = game:GetService("Players").LocalPlayer
@@ -191,7 +203,13 @@ local function RevokeOwnership(Other)
    sethiddenprop(Other, "MaximumSimulationRadius", 0.1)
    sethiddenprop(Other, "SimulationRadius", 0.1)
 end
- 
+ -- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
 coroutine.wrap(function() 
 if not isPrimaryOwner then
        if gethiddenprop and (setsimrad or sethiddenprop) then
@@ -217,20 +235,50 @@ settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrott
                    end
                end
            end
- 
+ -- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
            if ContaminatedPlayers > 0 then
                Result = Result:sub(1, -3)
            end
- 
+-- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end 
            InvokeCore("ChatMakeSystemMessage", {
    ["Text"] = (ContaminatedPlayers > 0) and string.format(ThereArHoggers, ContaminatedPlayers, Result) or ThereNoHoggers
            })
- 
-           Player.ReplicationFocus = workspace
+-- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end 
+  -- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end         Player.ReplicationFocus = workspace
            InvokeCore("ChatMakeSystemMessage", {
    ["Text"] = UHaveOwnership
            })
- 
+-- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end 
 while RS.Stepped:Wait() do
 for _, Other in pairs(Players:GetChildren()) do
    if Other ~= Player then
@@ -294,7 +342,13 @@ print(gethiddenproperty(game.Players.LocalPlayer, "SimulationRadius"))
 setsimulationradius(1e9, 1e9)
            game:GetService("RunService").Stepped:wait()
 for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-
+-- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
 if v:IsA("RemoteEvent") then
 print(v)
 local mt = getrawmetatable(game)
@@ -355,12 +409,24 @@ local setsimulationrad = setsimulationradius or set_simulation_radius or functio
 if not getgenv or not sethiddenprop or not setsimulationrad then return false end -- Not supported
 if getgenv().NETWORKOWNER then getgenv().NETWORKOWNER:Disconnect() getgenv().NETWORKPLAYERCHECK:Disconnect() getgenv().NETWORKPLAYERCHECK2:Disconnect() end
 getgenv().NETWORK_RADIUS = NETWORK_RADIUS or 1000
-
+-- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
 -- Grab services
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 PlayerInstance = Players.LocalPlayer
- 
+ -- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
 -- Optimize
 local PlayerList = {}
 for _, Plr in pairs(Players:GetPlayers()) do
@@ -368,11 +434,23 @@ for _, Plr in pairs(Players:GetPlayers()) do
         PlayerList[Plr] = true
     end
 end
- 
+ -- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
 getgenv().NETWORKPLAYERCHECK = Players.PlayerAdded:Connect(function(Plr)
     PlayerList[Plr] = true
 end)
- 
+ -- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
 getgenv().NETWORKPLAYERCHECK2 = Players.PlayerRemoving:Connect(function(Plr)
     local Success, Err = pcall(function() PlayerList[Plr] = nil end)
     if not Success then
@@ -380,7 +458,13 @@ getgenv().NETWORKPLAYERCHECK2 = Players.PlayerRemoving:Connect(function(Plr)
 ")
     end
 end)
- 
+ -- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
 -- Start network runtime
 getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
     -- Revoke ownership from others
@@ -403,7 +487,13 @@ end)
             end)
         end)()
     end
-
+-- Start network runtime
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
     wait(1)
 end
 end
