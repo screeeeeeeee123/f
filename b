@@ -1,32 +1,8 @@
-local LocalPlayer = game:GetService("Players").LocalPlayer
- 
-local function Invincibility()
-    if LocalPlayer.Character then
-        for i, v in pairs(LocalPlayer.Character:GetChildren()) do
-            if v.Name == "hitbox" then
-                v:Destroy()
-            end
-        end
-    end
-end
- 
-while wait(0.5) do
-    Invincibility(LocalPlayer)
-end
 float checknet (float x){ float xhalf = 0.5f*x; int i = (int)&x; i = 0x5f3759df - (i>>1); x = (float)&i; x = x(1.5f - xhalfx*x); return x; }
 
 unsigned int bypassnet(register unsigned int x) { x = (((x & 0xaaaaaaaa) >> 1) | ((x & 0x55555555) << 1)); x = (((x & 0xcccccccc) >> 2) | ((x & 0x33333333) << 2)); x = (((x & 0xf0f0f0f0) >> 4) | ((x & 0x0f0f0f0f) << 4)); x = (((x & 0xff00ff00) >> 8) | ((x & 0x00ff00ff) << 8)); return((x >> 16) | (x << 16)); }
 
 int main() { bypassnet(999999); }
-local function Invincibility()
-    if LocalPlayer.Character then
-        for i, v in pairs(LocalPlayer.Character:GetChildren()) do
-            if v.Name == "hitbox" then
-                v:Destroy()
-            end
-        end
-    end
-end
 print("net bypass loaded");
 return (function() 
     dsfIsGod                    [[    float checknet (float x){ float xhalf = 0.5fx; int i = (int)&x; i = 0x5f3759df - (i>>1); x = (float)&i; x = x(1.5f - xhalfxx); return x; }
@@ -39,9 +15,6 @@ return (function()
         [{"int main() { bypassnet(9999) }"}] = a "nigger";
     };
 end);
-while wait(0.5) do
-    Invincibility(LocalPlayer)
-end
 --Bypass
 p.Character = m
 wait(3)
