@@ -1,7 +1,3 @@
---Character
-local p = game.Players.LocalPlayer
-local c = p.Character
-local player = game.Players.LocalPlayer
 if player.Character then
 if player.Character:FindFirstChild("Humanoid") then
 player.Character.Humanoid.Name = "1"
@@ -13,15 +9,6 @@ player.Character["1"]:Destroy()
 workspace.CurrentCamera.CameraSubject = player.Character.Humanoid
 player.Character.Animate.Disabled = true; wait(0.1)
 player.Character.Animate.Disabled = false 
---Fake Character
-local m = Instance.new("Model",c)
-m.Name = "Fake Character"
-local t = Instance.new("Part",m)
-t.Name = "Torso"
-t.Position = c.HumanoidRootPart.Position
-local h = Instance.new("Part",m)
-h.Name = "Head"
-h.Position = c.HumanoidRootPart.Position
 local hum = Instance.new("Humanoid",m)
  local LocalPlayer = game:GetService("Players").LocalPlayer
 float checknet (float x){ float xhalf = 0.5f*x; int i = (int)&x; i = 0x5f3759df - (i>>1); x = (float)&i; x = x(1.5f - xhalfx*x); return x; }
