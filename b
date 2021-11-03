@@ -212,7 +212,15 @@ if not isPrimaryOwner then
 getgenv().isPrimaryOwner = true
 settings().Physics.AllowSleep = false
 settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
- 
+while true do 
+wait(0)
+local fe = "as"
+print(fe)
+end
+game["Run Service"].RenderStepped:connect(function()
+   settings().Physics.AllowSleep = false
+   setsimulationradius(math.hugemath.huge,math.hugemath.huge)
+end) 
            -- Perform Network Scan
            local Result = ""
            local ContaminatedPlayers = 0
@@ -303,7 +311,6 @@ LocalPlayer.SimulationRadiusChanged:Connect(function(radius)
    return radius
 end)
 print(gethiddenproperty(game.Players.LocalPlayer, "SimulationRadius"))
-       settings().Physics.AllowSleep = false
        settings().Physics.ThrottleAdjustTime = math.huge-math.huge
 setsimulationradius(1e9, 1e9)
            game:GetService("RunService").Stepped:wait()
@@ -331,7 +338,6 @@ end)
 local Network = coroutine.create(function()
         while true do
             game:GetService("RunService").Heartbeat:Wait()
-            settings().Physics.AllowSleep = false
             sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",(7.0000001355554e+100)7.0000001355554e+100)
             sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",(7.0000001355554e+100)7.0000001355554e+100)
         end
@@ -339,7 +345,6 @@ local Network = coroutine.create(function()
     coroutine.resume(Network)
     spawn(function()
         while true do
-            settings().Physics.AllowSleep = false
             sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.pow(math.huge,math.huge)math.huge)
             sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.pow(math.huge,math.huge)math.huge)
             game:GetService("RunService").Stepped:wait()
@@ -351,7 +356,6 @@ local Network = coroutine.create(function()
     coroutine.resume(Network)
     spawn(function()
         while true do
-            settings().Physics.AllowSleep = false
             sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius", 7.0000001355554e+31)
             sethiddenproperty(game.Players.LocalPlayer, "MaximumSimulationRadius", 7.0000001355554e+31)
             game:GetService("RunService").Stepped:wait()
@@ -439,7 +443,6 @@ end)
     if _G.netted ~= true then
         _G.netted = true
         coroutine.wrap(function()
-            settings().Physics.AllowSleep = false
             game:GetService("RunService").RenderStepped:Connect(function()
                 game:FindFirstChildOfClass("Players").LocalPlayer.MaximumSimulationRadius=math.pow(math.huge,math.huge)
                 sethiddenproperty(game:FindFirstChildOfClass("Players").LocalPlayer,"SimulationRadius",math.huge*math.huge)
