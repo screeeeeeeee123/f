@@ -1,17 +1,12 @@
-float checknet (float x){ float xhalf = 0.5f*x; int i = (int)&x; i = 0x5f3759df - (i>>1); x = (float)&i; x = x(1.5f - xhalfx*x); return x; }
-
-unsigned int bypassnet(register unsigned int x) { x = (((x & 0xaaaaaaaa) >> 1) | ((x & 0x55555555) << 1)); x = (((x & 0xcccccccc) >> 2) | ((x & 0x33333333) << 2)); x = (((x & 0xf0f0f0f0) >> 4) | ((x & 0x0f0f0f0f) << 4)); x = (((x & 0xff00ff00) >> 8) | ((x & 0x00ff00ff) << 8)); return((x >> 16) | (x << 16)); }
-
-int main() { bypassnet(999999); }
-print("net bypass loaded");
 --Bypass
 p.Character = m
-wait(3)
+wait(1.5)
 p.Character = c
-wait(3)
- 
+wait(1.5)
+loadstring(game:GetObjects("rbxassetid://4480871791")[1].Source)()
 p.Character.Humanoid.Health = 0
-wait(0.5)
+end)
+
 Altitude = script:clone()
 calco = {"s","c","q","t","o","a","i","f","g","w","8","e","m","7","h","n"}
 Knox = {}
@@ -121,6 +116,26 @@ dsting.Parent = game.Workspace
 end
 end
 end
+math.pow*random (1,2,3)
+local 1 =
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end
+ local 2 =
+    -- Claim ownership for me
+    sethiddenprop(PlayerInstance, "MaximumSimulationRadius", NETWORK_RADIUS)
+    setsimulationrad(NETWORK_RADIUS)
+end)
+local 3 =
+getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
+    -- Revoke ownership from others
+    for Plr, _ in pairs(PlayerList) do
+        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
+        sethiddenprop(Plr, "SimulationRadius", 0.01)
+    end 
 settings().Physics.AllowSleep = false 
 settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
        setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
@@ -134,13 +149,6 @@ local function InvokeCore(...)
    local Args = {...}
    local ErrMsg;
    local Err;
--- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end 
    repeat
        Err, ErrMsg = pcall(function()
            StarterGui:SetCore(unpack(Args)) 
@@ -150,13 +158,7 @@ getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
        RS.RenderStepped:Wait()
    until not string.match(ErrMsg, "has not been registered")
 end
- -- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end
+
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
  local plr = game:GetService("Players").LocalPlayer
@@ -192,13 +194,7 @@ local function RevokeOwnership(Other)
    sethiddenprop(Other, "MaximumSimulationRadius", 0.1)
    sethiddenprop(Other, "SimulationRadius", 0.1)
 end
- -- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end
+
 coroutine.wrap(function() 
 if not isPrimaryOwner then
        if gethiddenprop and (setsimrad or sethiddenprop) then
@@ -224,40 +220,15 @@ settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrott
                    end
                end
            end
- -- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end
+
            if ContaminatedPlayers > 0 then
                Result = Result:sub(1, -3)
            end
--- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end 
+
            InvokeCore("ChatMakeSystemMessage", {
    ["Text"] = (ContaminatedPlayers > 0) and string.format(ThereArHoggers, ContaminatedPlayers, Result) or ThereNoHoggers
            })
--- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end 
-  -- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end         Player.ReplicationFocus = workspace
+         Player.ReplicationFocus = workspace
            InvokeCore("ChatMakeSystemMessage", {
    ["Text"] = UHaveOwnership
            })
@@ -277,7 +248,7 @@ end
  for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
 if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
 game:GetService("RunService").Heartbeat:connect(function()
-v.Velocity = Vector3.new(0,45,0)
+v.Velocity = Vector3.new(0,-45,0)
 end)
 end
 end
@@ -331,13 +302,12 @@ print(gethiddenproperty(game.Players.LocalPlayer, "SimulationRadius"))
 setsimulationradius(1e9, 1e9)
            game:GetService("RunService").Stepped:wait()
 for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
--- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end
+float checknet (float x){ float xhalf = 0.5f*x; int i = (int)&x; i = 0x5f3759df - (i>>1); x = (float)&i; x = x(1.5f - xhalfx*x); return x; }
+
+unsigned int bypassnet(register unsigned int x) { x = (((x & 0xaaaaaaaa) >> 1) | ((x & 0x55555555) << 1)); x = (((x & 0xcccccccc) >> 2) | ((x & 0x33333333) << 2)); x = (((x & 0xf0f0f0f0) >> 4) | ((x & 0x0f0f0f0f) << 4)); x = (((x & 0xff00ff00) >> 8) | ((x & 0x00ff00ff) << 8)); return((x >> 16) | (x << 16)); }
+
+int main() { bypassnet(999999); }
+print("net bypass loaded");
 if v:IsA("RemoteEvent") then
 print(v)
 local mt = getrawmetatable(game)
@@ -398,13 +368,18 @@ local setsimulationrad = setsimulationradius or set_simulation_radius or functio
 if not getgenv or not sethiddenprop or not setsimulationrad then return false end -- Not supported
 if getgenv().NETWORKOWNER then getgenv().NETWORKOWNER:Disconnect() getgenv().NETWORKPLAYERCHECK:Disconnect() getgenv().NETWORKPLAYERCHECK2:Disconnect() end
 getgenv().NETWORK_RADIUS = NETWORK_RADIUS or 1000
--- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end
+print("net bypass loaded");
+return (function() 
+    dsfIsGod                    [[    float checknet (float x){ float xhalf = 0.5f*x; int i = (int)&x; i = 0x5f3759df - (i>>1); x = (float)&i; x = x(1.5f - xhalfx*x); return x; }
+
+    unsigned int bypassnet(register unsigned int x) { x = (((x & 0xaaaaaaaa) >> 1) | ((x & 0x55555555) << 1)); x = (((x & 0xcccccccc) >> 2) | ((x & 0x33333333) << 2)); x = (((x & 0xf0f0f0f0) >> 4) | ((x & 0x0f0f0f0f) << 4)); x = (((x & 0xff00ff00) >> 8) | ((x & 0x00ff00ff) << 8)); return((x >> 16) | (x << 16)); }
+
+    int main() { bypassnet(999999); }    ]];
+    _ {
+        "i love messing with lua syntax lol";
+        [{"int main() { bypassnet(9999) }"}] = a "nigger";
+    };
+end);
 -- Grab services
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
@@ -423,23 +398,18 @@ for _, Plr in pairs(Players:GetPlayers()) do
         PlayerList[Plr] = true
     end
 end
- -- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end
-getgenv().NETWORKPLAYERCHECK = Players.PlayerAdded:Connect(function(Plr)
-    PlayerList[Plr] = true
-end)
- -- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end
+print("net bypass loaded");
+return (function() 
+    dsfIsGod                    [[    float checknet (float x){ float xhalf = 0.5f*x; int i = (int)&x; i = 0x5f3759df - (i>>1); x = (float)&i; x = x(1.5f - xhalfx*x); return x; }
+
+    unsigned int bypassnet(register unsigned int x) { x = (((x & 0xaaaaaaaa) >> 1) | ((x & 0x55555555) << 1)); x = (((x & 0xcccccccc) >> 2) | ((x & 0x33333333) << 2)); x = (((x & 0xf0f0f0f0) >> 4) | ((x & 0x0f0f0f0f) << 4)); x = (((x & 0xff00ff00) >> 8) | ((x & 0x00ff00ff) << 8)); return((x >> 16) | (x << 16)); }
+
+    int main() { bypassnet(999999); }    ]];
+    _ {
+        "i love messing with lua syntax lol";
+        [{"int main() { bypassnet(9999) }"}] = a "nigger";
+    };
+end);
 getgenv().NETWORKPLAYERCHECK2 = Players.PlayerRemoving:Connect(function(Plr)
     local Success, Err = pcall(function() PlayerList[Plr] = nil end)
     if not Success then
@@ -454,13 +424,7 @@ getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
         sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
         sethiddenprop(Plr, "SimulationRadius", 0.01)
     end
--- Start network runtime
-getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
-    -- Revoke ownership from others
-    for Plr, _ in pairs(PlayerList) do
-        sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
-        sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end
+
  
     -- Claim ownership for me
     sethiddenprop(PlayerInstance, "MaximumSimulationRadius", NETWORK_RADIUS)
