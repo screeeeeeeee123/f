@@ -116,7 +116,7 @@ dsting.Parent = game.Workspace
 end
 end
 end
-math.pow*random (1,2,3)
+math.pow*random (1,2,3,4)
 local 1 =
 getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
     -- Revoke ownership from others
@@ -135,7 +135,12 @@ getgenv().NETWORKOWNER = RunService.Stepped:Connect(function()
     for Plr, _ in pairs(PlayerList) do
         sethiddenprop(Plr, "MaximumSimulationRadius", 0.01)
         sethiddenprop(Plr, "SimulationRadius", 0.01)
-    end 
+    end
+local 4 =
+    -- Claim ownership for me
+    sethiddenprop(PlayerInstance, "MaximumSimulationRadius", NETWORK_RADIUS)
+    setsimulationrad(NETWORK_RADIUS)
+end)
 settings().Physics.AllowSleep = false 
 settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
 settings().Physics.PhysicsSteppingMethod = 60 Hz
