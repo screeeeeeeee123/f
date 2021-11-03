@@ -143,7 +143,7 @@ local 4 =
 end)
 settings().Physics.AllowSleep = false 
 settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
-settings().Physics.PhysicsSteppingMethod = 60 Hz
+settings().Physics.PhysicsSteppingMethod = 240 Hz
        setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
        game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
 local unpack = table.unpack or unpack
