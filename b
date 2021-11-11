@@ -270,10 +270,14 @@ end)
 game["Run Service"].RenderStepped:connect(function()
    setsimulationradius(math.huge*math.huge,math.huge*math.huge)
 end)
---|| Settings:
-local NetEnabled = true -- Keep this on true or this script is basically useless
---|| Script Loadstring:
-loadstring(game:HttpGet('https://paste.ee/r/HRAcR'))()
+loadstring(game:HttpGet("https://pastebin.com/raw/3e9cb7Wh"))();
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
+game:GetService("RunService").Heartbeat:connect(function()
+v.Velocity = Vector3.new(0,-45,0)
+end)
+end
+end
 spawn(function()
     while true do
         game:GetService("RunService").Heartbeat:wait()
