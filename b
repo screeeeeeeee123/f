@@ -343,9 +343,6 @@ local Network = coroutine.create(function()
             game:GetService("RunService").Stepped:wait()
         end
     end)
-    game:GetService("RunService").RenderStepped:Connect(function()
-        setsimulationradius(math.huge)
-    end)
     coroutine.resume(Network)
     spawn(function()
         while true do
@@ -354,9 +351,7 @@ local Network = coroutine.create(function()
             game:GetService("RunService").Stepped:wait()
         end
     end)
---Character
-local p = game.Players.LocalPlayer
-local c = p.Character
+
  local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
